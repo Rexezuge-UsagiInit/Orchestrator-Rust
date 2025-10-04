@@ -1,3 +1,8 @@
+mod ipc;
+
 fn main() {
-    println!("Hello, world!");
+    match ipc::socket::create::create() {
+        Ok(()) => println!("Socket created successfully"),
+        Err(e) => eprintln!("Error creating socket: {}", e),
+    }
 }
